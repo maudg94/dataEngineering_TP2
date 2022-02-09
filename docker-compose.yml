@@ -5,7 +5,7 @@ services:
             - "80:80"
     back:
         environment: 
-            - FRONTEND_URL=http://localhost:80/
+            - FRONTEND_URL=http://localhost:80
         build: ./back
         ports:
             - "5000:5000"
