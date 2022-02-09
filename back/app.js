@@ -3,8 +3,12 @@ var express = require('express');
 var app = express();
 
 const session = require('express-session');
-
-app.use(cors())
+const corsOptions = {
+    credentials: true,
+    origin: process.env.FRONTEND_URL || 'http://localhost:4200',
+    optionsSuccessStatus: 200
+  }
+app.use(cors(corsOptions))
 app.use(
     session({
         secret: 'secret string',
