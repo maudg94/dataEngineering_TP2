@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   constructor(private http:HttpClient) {}
 
   async ngOnInit() {
-    this.numberRequest = (await lastValueFrom(this.http.get<PageCountApiResponse>("http://localhost:5000"))).pageCount;
+    this.numberRequest = (await lastValueFrom(this.http.get<PageCountApiResponse>("http://localhost:5000", {withCredentials:true}))).pageCount;
   }
 }
 export interface PageCountApiResponse {
