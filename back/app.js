@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 const session = require('express-session');
-var corsOptions = {
+const corsOptions = {
     credentials: true,
     origin: 'http://localhost:4200',
     optionsSuccessStatus: 200
