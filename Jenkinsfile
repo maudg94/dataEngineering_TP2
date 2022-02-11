@@ -13,7 +13,7 @@ pipeline{
         }
         stage('run test'){
             steps{
-                bat "cd front/my-app && dir && npm install && npx cypress run"
+                bat "cd front/my-app && dir && npm ci && npm run cy:verify && npx cypress run"
             }
         }
     }
