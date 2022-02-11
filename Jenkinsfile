@@ -7,9 +7,6 @@ pipeline{
             }
         } 
         stage('run test'){
-            when{
-                branch 'dev'
-            }
             steps{
                 bat "cd front/my-app"
                 bat "npm run start"
