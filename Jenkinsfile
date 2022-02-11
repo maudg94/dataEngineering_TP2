@@ -8,15 +8,12 @@ pipeline{
         } 
         stage('docker Build'){
             steps{
-                bat "docker-compose up"
+                bat "docker-compose up -d"
             }
         }
         stage('run test'){
             steps{
-                bat """
-                cd front/my-app
-                npm run e2e
-                """
+                bat "cd front/my-app && npm install && npm run e2e"
             }
         }
     }
