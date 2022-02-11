@@ -11,7 +11,7 @@ pipeline{
                 bat "docker-compose up -d --build"
             }
         }
-        stage('run test'){
+        stage('run e2e test'){
             steps{
                 bat "cd front/my-app && dir && npm ci && npm run cy:verify && npx cypress run"
             }
