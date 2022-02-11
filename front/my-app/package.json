@@ -8,7 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "cypress open",
-    "cypress:ci": "concurrently \"cypress run\" --kill-others \"ng serve\" --success first"
+    "cy:run": "cypress run",
+    "cy:verify": "cypress verify",
+    "ci:start-ng": "angular-http-server --path ./dist/YOUR_APP_NAME -p 4200",
+    "ci:cy-run": "start-server-and-test ci:start-ng http://localhost:4200 cy:run"
   },
   "private": true,
   "dependencies": {
