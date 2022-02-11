@@ -9,6 +9,7 @@ pipeline{
         stage('run test'){
             steps{
                 bat "cd front/my-app"
+                bat "dir"
                 bat "npm run start"
                 bat "npm run e2e"
             }
