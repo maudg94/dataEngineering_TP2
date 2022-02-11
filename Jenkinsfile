@@ -6,10 +6,21 @@ pipeline{
                 git([url:'https://github.com/maudg94/dataEngineering_TP2.git', branch:'dev'])
             }
         } 
+        stage('run test'){
+            when{
+                branch 'dev'
+            }
+            steps{
+                bat "cd front/my-app"
+                bat "npm run start"
+                bat "npm run e2e"
+            }
+        }
         stage('docker Build'){
             steps{
                 bat "docker-compose up"
             }
         }
+    
     }
 }
