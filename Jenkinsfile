@@ -8,10 +8,11 @@ pipeline{
         } 
         stage('run test'){
             steps{
-                bat "cd front/my-app"
-                bat "dir"
-                bat "npm run start"
-                bat "npm run e2e"
+                bat """
+                cd front/my-app
+                npm run start
+                npm run e2e
+                """
             }
         }
         stage('docker Build'){
