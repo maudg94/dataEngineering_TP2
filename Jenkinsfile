@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Pull') {
             steps {
-                git([url:'git@github.com:maudg94/dataEngineering_TP2.git', branch:'dev'])
+                git([url:'https://github.com/maudg94/dataEngineering_TP2.git', branch:'dev'])
             }
         } 
         stage('docker Build'){
@@ -26,4 +26,5 @@ pipeline{
             bat 'git push origin release'
         }
     }
+
 }
