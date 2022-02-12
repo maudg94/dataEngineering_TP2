@@ -15,11 +15,12 @@ pipeline{
             steps{
                 bat "cd front/my-app && dir && npm install && npm run e2e"
             }
-            post{
-                success {
-                    bat 'git merge release'
-                }
-            }
+        }
+    }
+    post { 
+        success{
+            echo "pushing in release ..."
+            bat "git push origin release"
         }
     }
 }
