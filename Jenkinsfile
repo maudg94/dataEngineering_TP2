@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Pull') {
             when {
-                branch 'develop'
+                branch 'dev'
             }
             steps {
                 git([url:'https://github.com/maudg94/dataEngineering_TP2.git', branch:'dev'])
@@ -11,7 +11,7 @@ pipeline{
         } 
         stage('docker Build'){
             when {
-                branch 'develop'
+                branch 'dev'
             }
             steps{
                 bat "docker-compose up -d --build"
@@ -19,7 +19,7 @@ pipeline{
         }
         stage('run e2e test'){
             when {
-                branch 'develop'
+                branch 'dev'
             }
             steps{
                 bat "cd front/my-app && dir && npm install && npm run e2e"
