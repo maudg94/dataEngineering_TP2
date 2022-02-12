@@ -13,7 +13,7 @@ pipeline{
         }
         stage('run e2e test'){
             steps{
-                bat "cd front/my-app && dir && npm start & wait-on http://localhost:4200 && cypress run"
+                bat "cd front/my-app && dir && npm run e2e"
             }
         }
     }
