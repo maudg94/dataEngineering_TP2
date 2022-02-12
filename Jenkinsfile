@@ -20,7 +20,10 @@ pipeline{
     post { 
         success{
             echo "pushing in release ..."
-            bat "git push origin release"
+            bat 'git status'
+            bat 'git checkout release'
+            bat 'git merge dev'
+            bat 'git push origin release'
         }
     }
 }
