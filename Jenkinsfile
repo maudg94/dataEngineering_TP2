@@ -13,7 +13,7 @@ pipeline{
         }
         stage('run e2e test'){
             steps{
-                bat "cd front/my-app && dir && npm run e2e"
+                bat "cd front/my-app && dir && npm install && npm run e2e"
             }
         }
     }
