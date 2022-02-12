@@ -1,6 +1,11 @@
 pipeline{
     agent any
     stages{
+        when{
+            expression {
+                return env.BRANCH_NAME == 'dev'
+            }
+        }
         stage('Pull') {
             steps {
                 git([url:'https://github.com/maudg94/dataEngineering_TP2.git', branch:'dev'])
